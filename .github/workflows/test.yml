@@ -3,6 +3,16 @@ name: Manual_Approval
 
 on:
   workflow_dispatch:   # Allows manual trigger from the Actions tab
+    inputs:
+      logLevel:
+        description: 'Log level'
+        required: true
+        default: 'warning'
+        type: choice
+        options:
+          - info
+          - warning
+          - debug
 
 jobs:
   build:
