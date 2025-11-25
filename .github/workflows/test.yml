@@ -25,5 +25,9 @@ jobs:
   test:
     runs-on: ubuntu-latest
     needs: build
+    environment: test
+    strategy:
+      matrix:
+        node: [10, 12, 14]
     steps:
       - run: echo "Running tests..."
